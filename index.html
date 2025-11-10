@@ -220,50 +220,71 @@
 
     </section><!-- /Resume Section -->
 
-  <!-- Services Section -->
-<section id="services" class="services section">
+<!-- Services Section -->
+<section id="services" class="services section bg-light py-5">
 
-  <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <span class="description-title">My Services</span>
-    <h2>My Services</h2>
-    <p>Čia yra mano pagrindinės paslaugos</p>
+    <span class="description-title">Mano paslaugos</span>
+    <h2>Paslaugos</h2>
+    <p>Štai ką galiu pasiūlyti — nuo kūrybos iki techninių sprendimų.</p>
   </div>
-  <!-- End Section Title -->
 
   <div class="container">
     <div class="row gy-4">
 
-      <!-- Video Example -->
-      <div class="col-lg-4 col-md-6 service-item" data-aos="fade-up">
-        <video width="320" height="240" controls>
-          <source src="/assets/media/keyboard.mp4" type="video/mp4">
-      
-        </video>
+      <!-- Service Item 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="card shadow-sm border-0 rounded-4 h-100 text-center p-4 hover-card">
+          <video class="rounded-3 mb-3 w-100" controls>
+            <source src="/assets/media/keyboard.mp4" type="video/mp4">
+            Jūsų naršyklė nepalaiko video formato.
+          </video>
+          <h4 class="fw-bold">Techniniai eksperimentai</h4>
+          <p>Trumpi mano darbų pavyzdžiai, kuriuose išbandau elektroniką ir kūrybą.</p>
+        </div>
       </div>
-      <!-- End Service Item -->
 
-      <!-- YouTube Embed -->
-      <div class="col-lg-4 col-md-6 service-item" data-aos="fade-up" data-aos-delay="100">
-        <iframe width="420" height="315"
-          src="https://www.youtube.com/embed/BoUVIhtqjAw"
-          title="YouTube video"
-          allowfullscreen>
-        </iframe>
+      <!-- Service Item 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="card shadow-sm border-0 rounded-4 h-100 text-center p-4 hover-card">
+          <div class="ratio ratio-16x9 mb-3">
+            <iframe src="https://www.youtube.com/embed/BoUVIhtqjAw"
+              title="YouTube video"
+              allowfullscreen
+              class="rounded-3"></iframe>
+          </div>
+          <h4 class="fw-bold">Muzikinė kūryba</h4>
+          <p>Kuriu muziką, įkvėptą aplinkos ir žmonių. Čia vienas iš mano įrašų.</p>
+        </div>
       </div>
-      <!-- End Service Item -->
 
-      <!-- Audio Example -->
-      <div class="col-lg-4 col-md-6 service-item" data-aos="fade-up" data-aos-delay="200">
-        <audio controls>
-          <source src="/assets/media/tick.mp3" type="audio/mpeg">
-         
-        </audio>
+      <!-- Service Item 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="card shadow-sm border-0 rounded-4 h-100 text-center p-4 hover-card">
+          <audio controls class="w-100 mb-3">
+            <source src="/assets/media/tick.mp3" type="audio/mpeg">
+            Jūsų naršyklė nepalaiko audio formato.
+          </audio>
+          <h4 class="fw-bold">Garso dizainas</h4>
+          <p>Trumpas garsinis eksperimentas, parodantis mano kūrybinę pusę.</p>
+        </div>
       </div>
-      <!-- End Service Item -->
 
     </div>
   </div>
+
+  <style>
+    .hover-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .services.section {
+      background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+    }
+  </style>
 
 </section>
 <!-- /Services Section -->
