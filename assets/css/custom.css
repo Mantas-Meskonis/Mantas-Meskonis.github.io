@@ -109,13 +109,13 @@ a:hover {
 }
 
 .portfolio-content {
-    border: 3px solid #f31212; 
+    border: 3px solid #f39c12; 
     border-radius: 6px;
     overflow: hidden; 
 }
 
 
-/*Atnaujinimas*/
+
 #header.header {
     background: #e67272; 
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); 
@@ -151,6 +151,29 @@ a:hover {
 
 .services.section {
   background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+}
+
+.nested-counter-list {
+    list-style: none; 
+    counter-reset: custom-counter; 
+    padding-left: 0;
+    margin-top: 5px;
+}
+
+.nested-counter-list li {
+    counter-increment: custom-counter;
+    margin-bottom: 3px;
+    padding-left: 0;
+}
+
+
+.nested-counter-list li::before {
+    content: counter(custom-counter, upper-roman) ") "; 
+    font-weight: bold;
+    color: #f39c12; 
+    margin-right: 5px;
+    display: inline-block;
+    min-width: 20px; 
 }
 
 /*Paslaugu lentele*/
