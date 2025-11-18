@@ -109,12 +109,12 @@ a:hover {
 }
 
 .portfolio-content {
-    border: 3px solid #f39c12; 
+    border: 3px solid #fa3301; 
     border-radius: 6px;
     overflow: hidden; 
 }
 
-
+/*Atnaujinimai */
 
 #header.header {
     background: #e67272; 
@@ -152,7 +152,7 @@ a:hover {
 .services.section {
   background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
 }
-
+/*Listų stiliai su numeriais*/
 .nested-counter-list {
     list-style: none; 
     counter-reset: custom-counter; 
@@ -238,4 +238,85 @@ top: 2px;
 color: #3498db;
 font-weight: bold;
 font-size: 1.1em;
+}
+/*10 Labaratorinis darbas*/
+/* --- 1. KEYFRAMES: Išblukimo efektas sekcijoms (Fade-in) --- */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Pritaikome Išblukimo Animaciją visoms pagrindinėms sekcijoms */
+/* Pataisome esamą .section stilių */
+.section {
+    padding: 60px 0;
+    animation: fadeIn 0.8s ease-out forwards; /* 1 UŽDUOTIS */
+    opacity: 0; /* Pradžioje paslepiame, kad animacija veiktų */
+}
+
+/* --- 2. KEYFRAMES: Pre-loader (Pulsuojantys taškai) --- */
+@keyframes pulseDot {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* ---------------- Pre-loader Stiliai ---------------- */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2c3e50;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+}
+
+/* Klasė, kuri pridedama, kai puslapis užkrautas (paslėpia pre-loader) */
+#preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.pulsing-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.pulsing-dots div {
+    width: 15px;
+    height: 15px;
+    background-color: #1abc9c;
+    border-radius: 50%;
+    animation: pulseDot 1.4s infinite ease-in-out both; /* 2 UŽDUOTIS */
+}
+
+/* Skirtingi vėlavimai dots elementams (kad sukurtų pulso efektą) */
+.pulsing-dots div:nth-child(1) { animation-delay: -0.32s; }
+.pulsing-dots div:nth-child(2) { animation-delay: -0.16s; }
+.pulsing-dots div:nth-child(3) { animation-delay: 0s; }
+/* --- 3. Reduced Motion Prisitaikymas (Prieinamumas) --- */
+
+@media (prefers-reduced-motion: reduce) {
+        /* Išjungiame sekcijų išblukimo animaciją */
+    .section {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+             }
+    /* Išjungiame pre-loader pulso animaciją */
+        .pulsing-dots div {
+         animation: none !important;
+         opacity: 1;
+         }
+        /* Pre-loader dingsta be perėjimo (transition) */
+        #preloader {
+         transition: opacity 0s;
+         }
 }
