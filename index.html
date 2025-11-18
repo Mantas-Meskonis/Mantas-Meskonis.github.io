@@ -40,7 +40,13 @@
 </head>
 
 <body class="index-page">
-
+<div id="preloader">
+    <div class="pulsing-dots">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
@@ -689,7 +695,17 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+<script>
+  window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      // Prideda "loaded" klasę, kuri paslepia pre-loader per CSS
+      preloader.classList.add('loaded');
+    }
+  });
+</script>
+</body>
+</html>
 </body>
 
 </html>
