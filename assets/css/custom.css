@@ -1,4 +1,4 @@
-
+/*Fontas*/
 body {
 
     font-family: 'Ubuntu', sans-serif; 
@@ -6,7 +6,7 @@ body {
     line-height: 1.6;
     color: #444; 
 }
-
+/*Antraštės*/
 
 h1 {
     font-size: 2.8em; 
@@ -18,7 +18,7 @@ h1 {
 
 h2 {
     font-size: 2em;
-    color: #3498db; 
+    color: #681111; 
     font-weight: 600;
     line-height: 1.2;
     margin-top: 40px;
@@ -28,7 +28,7 @@ h2 {
 
 h3 {
     font-size: 2.5em; 
-    color: #7d61ca; 
+    color: #e62807; 
     font-weight: 700;
     letter-spacing: 1.7px; 
     margin-bottom: 10px;
@@ -51,20 +51,14 @@ h5 {
     border-bottom: 1px solid #c3e8f1; 
     padding-bottom: 3px;
 }
-h6 {
-    font-size: 3em;
-    color: #5be9c5; 
-    font-weight: 500;
-    line-height: 2;
-    margin-top: 50px;
-    border-bottom: 3px solid #eea9a9; 
-    padding-bottom: 6px;
-}
 
+
+
+/*Mygtukai*/
 .btn {
     padding: 10px 25px;
     background-color: #e74c3c; 
-    color: white;
+    color: rgba(255, 255, 255, 0.555);
     border: none;
     border-radius: 5px;
     text-transform: uppercase;
@@ -94,6 +88,9 @@ a:hover {
     text-decoration: underline; 
 }
 
+
+
+/*Išdėstymas*/
 .section {
     padding: 60px 0;
 }
@@ -112,17 +109,17 @@ a:hover {
 }
 
 .portfolio-content {
-    border: 3px solid #f39c12; 
+    border: 3px solid #f31212; 
     border-radius: 6px;
     overflow: hidden; 
 }
 
 
-
+/*Atnaujinimas*/
 #header.header {
-    background: #ffffff; 
+    background: #e67272; 
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1); 
-    border-bottom: 5px solid #1abc9c; 
+    border-bottom: 5px solid #883939; 
 }
 
 #scroll-top {
@@ -156,30 +153,7 @@ a:hover {
   background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
 }
 
-.nested-counter-list {
-    list-style: none; 
-    counter-reset: custom-counter; 
-    padding-left: 0;
-    margin-top: 5px;
-}
-
-.nested-counter-list li {
-    counter-increment: custom-counter;
-    margin-bottom: 3px;
-    padding-left: 0;
-}
-
-
-.nested-counter-list li::before {
-    content: counter(custom-counter, upper-roman) ") "; 
-    font-weight: bold;
-    color: #f39c12; 
-    margin-right: 5px;
-    display: inline-block;
-    min-width: 20px; 
-}
-
-
+/*Paslaugu lentele*/
 .service-table {
     width: 90%; 
     margin: 20px auto;
@@ -215,4 +189,30 @@ a:hover {
     background-color: #e8f8f8;
     transition: background-color 0.3s;
     cursor: pointer;
+}
+
+
+
+
+/*Sarašu stiliai*/
+.styled-ul {
+list-style: none; 
+padding-left: 0;
+margin-top: 15px;
+}
+
+.styled-ul li {
+position: relative; 
+padding-left: 25px;
+margin-bottom: 8px;
+}
+
+.styled-ul li::before {
+content: "\2713"; 
+position: absolute;
+left: 0;
+top: 2px;
+color: #3498db;
+font-weight: bold;
+font-size: 1.1em;
 }
