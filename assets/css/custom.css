@@ -27,7 +27,7 @@ border-bottom: 2px solid #ecf0f1;
 
 h3 {
  font-size: 2.5em;
- color: #7d61ca;
+ color: #df0e0e;
  font-weight: 700;
  letter-spacing: 1.7px;
  margin-bottom: 10px;
@@ -35,7 +35,7 @@ h3 {
 
 h4 {
  font-size: 2em;
- color: #b3ee91;
+ color: #ee9791;
  font-weight: 900;
  letter-spacing: 2px;
 margin-bottom: 40px;
@@ -63,7 +63,7 @@ line-height: 2;
 .btn {
  padding: 10px 25px;
  background-color: #e74c3c;
-color: #ffffff; /* PATAISYMAS KONTRASTUI (4 UŽDUOTIS) */
+ color: #ffffff; 
  border: none;
  border-radius: 5px;
  text-transform: uppercase;
@@ -93,11 +93,11 @@ a:hover {
  text-decoration: underline;
 }
 
-/* PATAISYMAS SEKCIJAI: Pridėta animacija (1 UŽDUOTIS) */
+
 .section {
  padding: 60px 0;
  animation: fadeIn 0.8s ease-out forwards;
- opacity: 1; /* Pradinis nustatymas animacijai */
+ opacity: 1; 
 }
 
 .resume-item {
@@ -114,7 +114,7 @@ transition: box-shadow 0.3s;
 }
 
 .portfolio-content {
- border: 3px solid #f39c12;
+ border: 3px solid #f312125e;
  border-radius: 6px;
  overflow: hidden;
 }
@@ -154,7 +154,7 @@ transition: box-shadow 0.3s;
  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* PATAISYMAS PASLAUGŲ SEKCINIAI: Pridėtas animuotas gradientas (Papild. užd. 1) */
+
 @keyframes gradient-animation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -162,16 +162,16 @@ transition: box-shadow 0.3s;
 }
 
 .services.section {
-    background: linear-gradient(-45deg, #1abc9c, #3498db, #e74c3c, #8e44ad);
+    background: linear-gradient(-45deg, #f0a84a, #ee853f, #e74c3c, #e715158a);
     background-size: 400% 400%;
     animation: gradient-animation 15s ease infinite;
-    color: #f7f7f7; /* Pagerintas kontrastas */
+    color: #f7f7f7; 
     padding: 80px 0;
     position: relative; 
     overflow: hidden; 
 }
 
-/* SAARŠŲ STILIAI (1 UŽDUOTIS) */
+
 
 .nested-counter-list {
  list-style: none;
@@ -196,31 +196,31 @@ transition: box-shadow 0.3s;
  min-width: 20px;
 }
 
-/* Naujas stilius nenumeruotam sąrašui (Santraukos sekcijai) */
+
 .styled-ul {
- list-style: none; /* Paslepiame standartinius ženklelius */
+ list-style: none; 
  padding-left: 0;
  margin-top: 15px;
 }
 
 .styled-ul li {
- position: relative; /* Reikalinga absoliučiam pozicionavimui */
- padding-left: 25px; /* Padarome vietos naujam ženkleliui */
- margin-bottom: 8px; /* Atstumas tarp eilučių */
+ position: relative;
+ padding-left: 25px;
+ margin-bottom: 8px;
 }
 
 .styled-ul li::before {
- content: "\2713"; /* Tai "checkmark" (varnelės) simbolis */
+ content: "\2713"; 
  position: absolute;
  left: 0;
  top: 2px;
- color: #3498db; /* Naudojame jūsų nuorodų spalvą */
+ color: #3498db; 
  font-weight: bold;
  font-size: 1.1em;
 }
 
 
-/* LENTELĖS STILIAI (2 UŽDUOTIS) */
+
 
 .service-table {
  width: 90%;
@@ -260,33 +260,32 @@ transition: box-shadow 0.3s;
 }
 
 
-/* --- ANIMACIJOS IR PRE-LOADER (3 UŽDUOTIS) --- */
 
-/* KEYFRAMES: Išblukimo efektas (Fade-in) */
+
 @keyframes fadeIn {
  0% { opacity: 0; transform: translateY(20px); }
  100% { opacity: 1; transform: translateY(0); }
 }
 
-/* KEYFRAMES: Pre-loader (Pulsing Dots) */
+
 @keyframes pulseDot {
  0%, 100% { opacity: 0.3; transform: scale(0.8); }
  50% { opacity: 1; transform: scale(1.1); }
 }
 
-/* ---------------- Pre-loader Stiliai ---------------- */
+/* - Pre-loader Stiliai - */
 #preloader {
  position: fixed;
  top: 0;
  left: 0;
  right: 0;
  bottom: 0;
- background-color: #2c3e50;
+ background-color: #e04c4ca6;
  z-index: 9999;
  display: flex;
  justify-content: center;
  align-items: center;
- transition: opacity 0.5s ease-out;
+ transition: opacity 2s ease-out;
  opacity: 1;
 }
 
@@ -304,12 +303,11 @@ transition: box-shadow 0.3s;
 .pulsing-dots div {
  width: 15px;
  height: 15px;
- background-color: #1abc9c;
+ background-color: #e64236;
  border-radius: 50%;
  animation: pulseDot 1.4s infinite ease-in-out both;
 }
 
-/* Skirtingi vėlavimai dots elementams */
 .pulsing-dots div:nth-child(1) {
  animation-delay: -0.32s;
 }
@@ -321,21 +319,21 @@ transition: box-shadow 0.3s;
 }
 
 
-/* --- ANIMUOTOS CSS FIGŪROS (Papild. užd. 2) --- */
 
-/* KEYFRAMES: Plaukiojimas (Floating) */
+
+
 @keyframes floating {
  0%, 100% { transform: translateY(0) rotate(0deg); }
  50% { transform: translateY(-15px) rotate(15deg); }
 }
 
-/* KEYFRAMES: Sukimasis (Rotating) */
+
 @keyframes rotating {
  from { transform: rotate(0deg); }
  to { transform: rotate(360deg); }
 }
 
-/* Išsaugome #about sekcijos kontekstą */
+
 #about {
  position: relative;
  overflow: hidden;
@@ -358,35 +356,35 @@ transition: box-shadow 0.3s;
  z-index: 0;
 }
 
-/* 1. Didelis Apskritimas (Floating) */
+
 .css-shape.circle {
  width: 100px;
  height: 100px;
- background-color: #3498db;
+ background-color: #e20c0c;
  border-radius: 50%;
  top: 10%;
  left: 5%;
  animation: floating 10s infinite;
 }
 
-/* 2. Trikampis (Rotating) */
+
 .css-shape.triangle {
  width: 0;
  height: 0;
  border-left: 50px solid transparent;
  border-right: 50px solid transparent;
- border-bottom: 86px solid #e74c3c;
+ border-bottom: 86px solid #830051b7;
  top: 50%;
  right: 10%;
  transform-origin: center;
  animation: rotating 8s linear infinite;
 }
 
-/* 3. Mažas Apskritimas (Floating, reverse) */
+
 .css-shape.small {
  width: 50px;
  height: 50px;
- background-color: #1abc9c;
+ background-color: #ffdc41f6;
  border-radius: 50%;
  bottom: 5%;
  left: 30%;
@@ -394,21 +392,20 @@ transition: box-shadow 0.3s;
 }
 
 
-/* ---------------- Reduced Motion Prisitaikymas (3 UŽDUOTIS) ---------------- */
 
 @media (prefers-reduced-motion: reduce) {
- /* Išjungiame sekcijų išblukimo animaciją ir figūrų animacijas */
+
  .section, .css-shape {
         animation: none !important;
         opacity: 1;
          transform: none;
  }
- /* Išjungiame pre-loader animaciją */
+
  .pulsing-dots div {
      animation: none !important;
      opacity: 1;
  }
- /* Pre-loader tiesiog iškart dingsta (tik perėjimas be animacijos) */
+
 #preloader {
     transition: opacity 0s;
      }
