@@ -410,3 +410,294 @@ transition: box-shadow 0.3s;
     transition: opacity 0s;
      }
 }
+/* assets/css/custom.css */
+
+/* --- LD10: CSS Animation (Papildoma užduotis) --- */
+
+/* 1. Animated Gradient Background for Services Section */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#services {
+    /* Melyna, violetine, oranzine spalvos gradientas */
+    background: linear-gradient(-45deg, #1e90ff, #8a2be2, #ff6347, #f08080); 
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: #fff; /* Pakeiciame teksto spalva i balta geresniam kontrastui */
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#services .section-title h2,
+#services .section-title span,
+#services .hover-card h4 {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Kortelių stilius Service sekcijoje */
+#services .hover-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+}
+
+#services .hover-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* 2. Animated CSS Figures (Apie Mane Section) */
+
+.animated-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.about .animated-shapes {
+    opacity: 0.1;
+}
+
+.css-shape {
+    position: absolute;
+}
+
+/* 1. Didelis Apskritimas (Floating) */
+.css-shape.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #522c2c;
+    border-radius: 50%;
+    top: 10%;
+    left: 5%;
+    animation: floating 10s infinite;
+}
+
+/* 2. Trikampis (Rotating) */
+.css-shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 86px solid #e74c3c;
+    top: 50%;
+    right: 10%;
+    transform-origin: center;
+    animation: rotating 8s linear infinite;
+}
+
+/* 3. Mažas Apskritimas (Floating, reverse) */
+.css-shape.circle.small {
+    width: 50px;
+    height: 50px;
+    background-color: #dd4430;
+    border-radius: 50%;
+    bottom: 5%;
+    left: 30%;
+    animation: floating 12s reverse infinite;
+}
+
+/* Keyframes for CSS figures */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- LD12: Game Styling --- */
+
+.game-controls {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    position: sticky;
+    top: 100px; 
+}
+
+.memory-grid {
+    display: grid;
+    /* Kortelių tinklelis bus apibrėžtas JS */
+    gap: 10px;
+    perspective: 1000px;
+}
+
+.memory-card {
+    position: relative;
+    width: 100%;
+    height: 100px; 
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.memory-card:active {
+    transform: scale(0.98);
+    transition: transform 0.2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.memory-card.match {
+    cursor: default;
+    opacity: 0.5; /* Surastos kortelės pablyksta */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+.front-face, .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.front-face {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    color: #333;
+    font-size: 3rem; /* Kortelės nugarėlė (klaustukas) */
+}
+
+.back-face {
+    background-color: #dd4430; /* Akcento spalva, kaip šablono */
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 2.5rem;
+}
+
+.initial-message {
+    text-align: center;
+    padding: 50px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    grid-column: 1 / -1; 
+}
+
+/* --- LD11: Form Validation Styles --- */
+
+/* Klaidos rėmelis */
+#contactForm input.error {
+    border: 2px solid red !important;
+}
+
+/* Klaidos pranešimas */
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* --- LD9: List Styles --- */
+
+/* Nested counter list styling for Resume section */
+.nested-counter-list {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: item;
+}
+
+.nested-counter-list > li {
+    counter-increment: item;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.nested-counter-list > li::before {
+    content: counters(item, ".") ". ";
+    font-weight: bold;
+    color: #dd4430; 
+    position: absolute;
+    left: 0;
+}
+
+.nested-counter-list ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 5px;
+    counter-reset: sub-item;
+}
+
+.nested-counter-list ul li::before {
+    counter-increment: sub-item;
+    content: "\2022"; /* Bullet point */
+    color: #8c8c8c;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* --- LD9: Table Styling (Paslaugos Section) --- */
+
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.service-table th, .service-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+/* Antraštinė eilutė (Header Row) */
+.service-table thead tr {
+    background-color: #dd4430; 
+    color: white;
+    font-weight: bold;
+}
+
+/* Zebra stilius (even rows) */
+.service-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Hover efektas (arba) */
+.service-table tbody tr:hover {
+    background-color: #e2e6ea;
+    transition: background-color 0.3s ease;
+}
