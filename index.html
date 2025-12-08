@@ -13,7 +13,7 @@
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Quicksand:wght@300;400;500;600;600;700&family=Domine:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Quicksand:wght@300;400;500;600;700&family=Domine:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -66,6 +66,7 @@
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#game">Game</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -510,7 +511,7 @@
        
           <div class="row">
     <div class="col-lg-12">
-        <form action="javascript:void(0);" method="post" class="php-email-form" id="contactForm"> 
+        <form action="javascript:void(0);" method="post" class="php-email-form" id="contactForm">
             <div class="row">
                 <div class="col-md-6 form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Vardas" required>
@@ -548,15 +549,66 @@
             </div>
             
             <div class="text-center">
-                <button type="submit" class="btn">Pateikti duomenis</button>
+                <button type="submit" class="btn" id="form-submit-btn" disabled>Pateikti duomenis</button>
             </div>
         </form>
     </div>
 </div>
         <div id="form-results" class="mt-5 pt-4"> 
         </div>
-        </div>
 
+      </div>
+
+    </section><section id="game" class="game section">
+        <div class="container section-title" data-aos="fade-up">
+            <span class="description-title">Žaidimas</span>
+            <h2>Mano Žaidimas</h2>
+            <p>Atminties kortelių žaidimas (Flip Card Memory).</p>
+        </div><div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="game-controls p-3 mb-4 card shadow-sm">
+                        <h4 class="mb-3">Sudėtingumo lygis</h4>
+                        <div class="form-group mb-4">
+                            <select id="difficulty-select" class="form-select">
+                                <option value="easy">Lengvas (4x3)</option>
+                                <option value="hard">Sunkus (6x4)</option>
+                            </select>
+                        </div>
+
+                        <h4 class="mb-3">Valdymas</h4>
+                        <div class="d-grid gap-2 mb-4">
+                            <button id="start-game-btn" class="btn btn-primary">Start</button>
+                            <button id="reset-game-btn" class="btn btn-secondary">Atnaujinti</button>
+                        </div>
+
+                        <h4 class="mb-3">Statistika</h4>
+                        <div class="game-stats">
+                            <p>Laikas: <strong id="game-timer">00:00</strong></p>
+                            <p>Ėjimai: <strong id="moves-count">0</strong></p>
+                            <p>Surastos poros: <strong id="matched-pairs-count">0 / 6</strong></p>
+                            <hr>
+                            <h5>Geriausi rezultatai (Ėjimai)</h5>
+                            <p>Lengvas: <strong id="best-score-easy">N/A</strong></p>
+                            <p>Sunkus: <strong id="best-score-hard">N/A</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div id="game-board-container" class="mb-4">
+                        <div id="game-board" class="memory-grid">
+                            <div class="initial-message">Pasirinkite sudėtingumą ir spauskite **Start**</div>
+                        </div>
+                    </div>
+
+                    <div id="win-message" class="alert alert-success text-center d-none" role="alert">
+                        <strong>Laimėjote!</strong>
+                        <p id="final-stats"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section></main>
 
   <footer id="footer" class="footer position-relative dark-background">
@@ -599,7 +651,6 @@
     window.addEventListener('load', function() {
       const preloader = document.getElementById('preloader');
       if (preloader) {
-        
         preloader.classList.add('loaded');
       }
     });
